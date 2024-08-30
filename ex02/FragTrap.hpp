@@ -1,18 +1,21 @@
 #ifndef FRAGTRAP_HPP
 #define FRAGTRAP_HPP
 
-#include "ClapTrap.hpp"
+#include "ClapTrap.hpp" // 基底クラスであるClapTrapをインクルード
 #include <iostream>
 #include <string>
 
+// FragTrapクラスの宣言：ClapTrapクラスを継承している
 class FragTrap : public ClapTrap
 {
   public:
-	FragTrap(std::string name);
-	~FragTrap();
+    // コンストラクタとデストラクタの宣言
+    FragTrap(std::string name);
+    ~FragTrap();
 
-	void attack(const std::string &target);
-	void highFivesGuys();
+    // メソッドの宣言
+    void attack(const std::string &target); // 攻撃メソッド
+    void highFivesGuys(); // ハイタッチメソッド
 };
 
 #endif

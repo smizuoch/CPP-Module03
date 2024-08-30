@@ -2,14 +2,19 @@
 
 int main()
 {
-	FragTrap frag("FR4G-TP");
+    // FragTrapオブジェクトの生成
+    FragTrap frag("FR4G-TP");
 
-	frag.attack("target1");
-	frag.takeDamage(20);
-	frag.beRepaired(10);
+    // 攻撃メソッドを実行
+    frag.attack("target1");
+    frag.takeDamage(20); // ダメージを受けるメソッド（ClapTrapクラスから継承）
+    frag.beRepaired(10); // 回復メソッド（ClapTrapクラスから継承）
 
-	frag.highFivesGuys();
-	frag.attack("target2");
+    // ハイタッチを要求
+    frag.highFivesGuys();
+    
+    // 再度攻撃
+    frag.attack("target2");
 
-	return 0;
+    return 0;
 }
