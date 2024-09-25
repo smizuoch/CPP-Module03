@@ -9,13 +9,15 @@
 class FragTrap : public ClapTrap
 {
   public:
-    // コンストラクタとデストラクタの宣言
-    FragTrap(std::string name);
-    ~FragTrap();
+	// コンストラクタとデストラクタの宣言
+	FragTrap(std::string name);
+	FragTrap(const FragTrap &other);
+	FragTrap &operator=(const FragTrap &other);
+	~FragTrap();
 
-    // メソッドの宣言
-    void attack(const std::string &target); // 攻撃メソッド
-    void highFivesGuys(); // ハイタッチメソッド
+	// メソッドの宣言
+	void attack(const std::string &target); // 攻撃メソッド
+	void highFivesGuys();                   // ハイタッチメソッド
 };
 
 #endif
