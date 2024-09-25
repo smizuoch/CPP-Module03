@@ -9,6 +9,23 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	std::cout << "ScavTrap " << Name << " constructed!" << std::endl; // コンストラクタが呼ばれたことを表示
 }
 
+// ScavTrapのコピーコンストラクタ：オブジェクトのコピーが作成される際に呼び出されます
+ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
+{
+	std::cout << "ScavTrap " << Name << " copied!" << std::endl; // コピーされたことを表示
+}
+
+// ScavTrapの代入演算子のオーバーロード：オブジェクトの代入が行われる際に呼び出されます
+ScavTrap &ScavTrap::operator=(const ScavTrap &other)
+{
+	Name = other.Name;          // 名前を代入
+	HitPoints = other.HitPoints; // ヒットポイントを代入
+	EnergyPoints = other.EnergyPoints; // エナジーポイントを代入
+	AttackDamage = other.AttackDamage; // 攻撃力を代入
+	std::cout << "ScavTrap " << Name << " assigned!" << std::endl; // 代入されたことを表示
+	return *this; // 代入されたオブジェクトを返します
+}
+
 // ScavTrapのデストラクタ：オブジェクトが破棄される際に呼び出されます
 ScavTrap::~ScavTrap()
 {
