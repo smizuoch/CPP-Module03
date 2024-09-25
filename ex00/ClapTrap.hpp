@@ -16,6 +16,8 @@ class ClapTrap
   public:
 	// コンストラクタ：名前を引数として受け取ります
 	ClapTrap(std::string name);
+	ClapTrap(const ClapTrap &other);
+	ClapTrap &operator=(const ClapTrap &other);
 
 	// デストラクタ：オブジェクトが破棄されるときに呼ばれます
 	~ClapTrap();

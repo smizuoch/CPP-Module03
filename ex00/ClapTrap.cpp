@@ -6,6 +6,24 @@ ClapTrap::ClapTrap(std::string name) : Name(name), HitPoints(10), EnergyPoints(1
 	std::cout << "ClapTrap " << Name << " constructed!" << std::endl; // クラップトラップが作成されたことを表示
 }
 
+// コピーコンストラクタ：オブジェクトのコピーが作成される際に呼ばれます
+ClapTrap::ClapTrap(const ClapTrap &other)
+    : Name(other.Name), HitPoints(other.HitPoints), EnergyPoints(other.EnergyPoints), AttackDamage(other.AttackDamage)
+{
+	std::cout << "ClapTrap " << Name << " copied!" << std::endl; // クラップトラップがコピーされたことを表示
+}
+
+// 代入演算子のオーバーロード：オブジェクトの代入が行われる際に呼ばれます
+ClapTrap &ClapTrap::operator=(const ClapTrap &other)
+{
+	Name = other.Name;                                             // 名前を代入
+	HitPoints = other.HitPoints;                                   // ヒットポイントを代入
+	EnergyPoints = other.EnergyPoints;                             // エナジーポイントを代入
+	AttackDamage = other.AttackDamage;                             // 攻撃力を代入
+	std::cout << "ClapTrap " << Name << " assigned!" << std::endl; // クラップトラップが代入されたことを表示
+	return *this;                                                  // 代入されたオブジェクトを返します
+}
+
 // デストラクタ：オブジェクトが破棄される際に呼ばれます
 ClapTrap::~ClapTrap()
 {
